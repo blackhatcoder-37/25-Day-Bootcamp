@@ -1,0 +1,11 @@
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        a = []
+        def inorder(head):
+            if head == None:
+                return
+            inorder(head.left)
+            a.append(head.val)
+            inorder(head.right)
+        inorder(root)
+        return a
